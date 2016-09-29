@@ -42,23 +42,4 @@ songId--
     songCount.innerHTML = `Tracks Showing: ${songList.length}`
 }
 
-
-// var autoPlay = document.getElementById("previewPlay");
-// asss.onmouseover=function(){
-// previewPlay.play();
-// return false;
-// };
-
-
-// audio.play();
-// });
-
-// var autoPlay = document.createAttribute('autoplay') 
-
-
-// var autoPlay = document.getElementsByTagName("audio");
-// $("nav a").mouseenter(function() {
-//   autoPlay.play();
-// });
-
-// audio.autoPlay
+  

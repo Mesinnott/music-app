@@ -76,8 +76,7 @@ body {
   width: 100%;
   justify-content: space-between;
   align-items: stretch;
-  word-wrap: break-word;
-  word-break: break-all; }
+  word-wrap: break-word; }
 
 .player-container {
   margin-top: 2%;
@@ -90,7 +89,6 @@ body {
 
 h3 {
   word-wrap: break-word;
-  word-break: break-all;
   margin-top: 10px; }
 
 .extra-container {
