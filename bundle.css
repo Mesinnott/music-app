@@ -5,7 +5,7 @@ body {
   font-family: cursive; }
 
 .song {
-  height: 190px;
+  height: auto;
   box-shadow: 15px 15px 5px ghostwhite;
   border-radius: 10px;
   margin: 10px;
