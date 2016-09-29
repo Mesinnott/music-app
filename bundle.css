@@ -6,6 +6,7 @@ body {
 
 .song {
   height: auto;
+  background-size: contain;
   box-shadow: 15px 15px 5px ghostwhite;
   border-radius: 10px;
   margin: 10px;
@@ -29,28 +30,31 @@ body {
     box-shadow: 15px 15px 5px ghostwhite; }
   100% {
     background-color: rgba(0, 75, 99, 0.8);
-    box-shadow: 15px 15px 5px grey; } }
+    box-shadow: 15px 15px 5px grey;
+    background-image: url("https://www.playframework.com/assets/images/logos/play_reverse.png"); } }
 
 .img-container {
+  mix-blend-mode: lighten;
   height: auto;
   width: 100%;
   margin: 1px;
-  border: 3px solid lawngreen;
+  border: 3px solid chartreuse;
   border-radius: 10px;
   opacity: 1;
-  color: lawngreen;
+  color: chartreuse;
   font-size: auto; }
 
 .text-container {
   margin: 2px;
   width: 100%;
-  border: 3px solid lawngreen;
+  border: 3px solid chartreuse;
   border-radius: 10px;
-  color: lawngreen; }
+  color: chartreuse;
+  mix-blend-mode: lighten; }
 
 .jumbo {
   background-color: rgba(0, 75, 99, 0.3);
-  color: lawngreen;
+  color: chartreuse;
   height: 300px;
   box-shadow: 15px 15px 5px whitesmoke;
   font-family: cursive;
@@ -62,6 +66,7 @@ body {
   align-items: center; }
 
 .pic-container {
+  mix-blend-mode: normal;
   flex-grow: 1;
   width: 25%;
   align-items: center; }
@@ -89,12 +94,12 @@ h3 {
   margin-top: 10px; }
 
 .extra-container {
+  mix-blend-mode: lighten;
   height: auto;
   width: 100%;
-  border: 3px solid lawngreen;
   border-radius: 10px;
   opacity: 1;
-  color: lawngreen;
+  color: chartreuse;
   font-size: auto; }
 
 .img-full {

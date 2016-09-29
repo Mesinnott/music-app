@@ -13,7 +13,7 @@ function drawSongs(songList){
   for (var i = 0; i < songList.length; i++) {
     var song = songList[i]   
 template +=
-  `<div class = 'col-xs-12 col-md-6'>
+  `<div class = 'col-xs-12 col-md-6' >
   <div class= 'song'>
   <div class = 'picName-container'>
      <div class = 'img-container pic-container'>

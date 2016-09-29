@@ -6,7 +6,10 @@ body{
     // word-break: break-all;
 }
 .song{
-height: 190px;
+height: auto;
+//   background-image: url("https://www.playframework.com/assets/images/logos/play_full_color.png");
+  background-size: contain;
+//   mix-blend-mode: difference;
 // max-height: 200px;
 // width: auto; 
 // height: auto;
@@ -31,21 +34,26 @@ animation-fill-mode: forwards;
 
 @keyframes glow{
     0% {background-color: rgba(00,75,99, 0.3);
-        box-shadow: 15px 15px 5px ghostwhite;}
+        box-shadow: 15px 15px 5px ghostwhite;
+        // background-image: url('https://www.playframework.com/assets/images/logos/play_full_color.png');
+    }
     100%{background-color: rgba(00,75,99, 0.8);
-        box-shadow: 15px 15px 5px grey;}
+        box-shadow: 15px 15px 5px grey;
+        background-image: url('https://www.playframework.com/assets/images/logos/play_reverse.png');
+        }
 }
 
 .img-container{ 
+    mix-blend-mode: lighten;
     height: auto;
     width: 100%;
     // overflow: hidden;
     margin:1px;
     // padding:5px;
-    border:3px solid lawngreen;
+    border:3px solid chartreuse;
     border-radius:10px;
     opacity: 1;
-    color: lawngreen;
+    color: chartreuse;
     font-size: auto;
 }
 .text-container{
@@ -54,15 +62,15 @@ animation-fill-mode: forwards;
     margin: 2px;
     width: 100%;
     // padding:3px;
-    border: 3px solid lawngreen;
+    border: 3px solid chartreuse;
     border-radius:10px;
     // background-color: rgba(69,69,69, 0.4);
-    color: lawngreen;
+    color: chartreuse;
+    mix-blend-mode: lighten;
 }
 .jumbo{
     background-color: rgba(00,75,99, 0.3);
-    color: lawngreen;   
-    // -webkit-mix-blend-mode: exclusion;
+    color: chartreuse;   
     height: 300px;
     box-shadow: 15px 15px 5px whitesmoke;
     font-family: cursive;
@@ -75,11 +83,13 @@ animation-fill-mode: forwards;
     align-items:center;
 }
 .pic-container{
+    mix-blend-mode: normal;
     flex-grow: 1;
     width:25%;
     align-items: center;
 }
 .picName-container{
+    // mix-blend-mode: difference;
     display:flex;
     width: 100%;
     justify-content: space-between;
@@ -92,6 +102,7 @@ animation-fill-mode: forwards;
     margin-bottom:2%;
 }
 .title-container{
+    // mix-blend-mode: difference;
     flex-grow: 1;
     height: auto;
     align-items:center;
@@ -102,15 +113,16 @@ h3{
     margin-top: 10px;
 }
 .extra-container{
+    mix-blend-mode: lighten;
      height: auto;
     width: 100%;
     // overflow: hidden;
     // margin:1px;
     // padding:5px;
-    border:3px solid lawngreen;
+    // border:3px solid chartreuse;
     border-radius:10px;
     opacity: 1;
-    color: lawngreen;
+    color: chartreuse;
     font-size: auto;
 }
 .img-full{
