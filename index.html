@@ -1,21 +1,33 @@
 <html>
   <head>
-    <title>Itunes</title>
+    <title>MyTunes</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel ='stylesheet' href='bundle.css'/>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src='itunes-service.js'></script>
+    <script src='app.js'></script>
+    <script src="https://use.fontawesome.com/c17ddedbe8.js"></script>
   </head>
   <body>
+      <div class="container container-responsive">
+          <div class='jumbotron jumbo'>
+              <h1> WELCOME <i class= 'fa fa-play-circle' aria-hidden="true"></i> </h1>
+              <h3> find your music... Just type and play</h3>
       <form class="form-inline">
         <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
         <div class="form-group">
-          <input type="text" class="form-control" id="artist" placeholder="Artist Name"/>
-          <button type="button" class="btn btn-primary" id="get-music-button" onclick="getMusic()">Get Music</button>
+          <input type="text" onkeyup="getMusic()" class="form-control" id="artist" placeholder="Artist Name"/>
+          <!--<button type="button" class="btn btn-primary" id="get-music-button" onclick="getMusic()">Get Music</button>-->
         </div>
       </form>
-      <div>
-       <ul id = "song-list">
-         
-       </ul>
+      <h4 id ='track-count'></h4>
       </div>
+      <div class = 'row'>
+          <!--<div class = 'col-xs-6 col-md-3'>-->
+       <ul id = "song-list">
+       </ul>
+      <!--</div>-->
+       </div>
+       </div>
   </body>
 </html>

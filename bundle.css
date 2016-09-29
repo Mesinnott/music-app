@@ -1,0 +1,102 @@
+body {
+  background-image: url("http://wallpapercave.com/wp/p7HRiw3.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: cursive; }
+
+.song {
+  height: 190px;
+  box-shadow: 15px 15px 5px ghostwhite;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: space-around;
+  text-align: center;
+  background-color: rgba(0, 75, 99, 0.3);
+  overflow: hidden; }
+
+.song:hover {
+  animation-name: glow;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; }
+
+@keyframes glow {
+  0% {
+    background-color: rgba(0, 75, 99, 0.3);
+    box-shadow: 15px 15px 5px ghostwhite; }
+  100% {
+    background-color: rgba(0, 75, 99, 0.8);
+    box-shadow: 15px 15px 5px grey; } }
+
+.img-container {
+  height: auto;
+  width: 100%;
+  margin: 1px;
+  border: 3px solid lawngreen;
+  border-radius: 10px;
+  opacity: 1;
+  color: lawngreen;
+  font-size: auto; }
+
+.text-container {
+  margin: 2px;
+  width: 100%;
+  border: 3px solid lawngreen;
+  border-radius: 10px;
+  color: lawngreen; }
+
+.jumbo {
+  background-color: rgba(0, 75, 99, 0.3);
+  color: lawngreen;
+  height: 300px;
+  box-shadow: 15px 15px 5px whitesmoke;
+  font-family: cursive;
+  text-align: center; }
+
+.controls {
+  opacity: .8;
+  display: flex;
+  align-items: center; }
+
+.pic-container {
+  flex-grow: 1;
+  width: 25%;
+  align-items: center; }
+
+.picName-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: stretch;
+  word-wrap: break-word;
+  word-break: break-all; }
+
+.player-container {
+  margin-top: 2%;
+  margin-bottom: 2%; }
+
+.title-container {
+  flex-grow: 1;
+  height: auto;
+  align-items: center; }
+
+h3 {
+  word-wrap: break-word;
+  word-break: break-all;
+  margin-top: 10px; }
+
+.extra-container {
+  height: auto;
+  width: 100%;
+  border: 3px solid lawngreen;
+  border-radius: 10px;
+  opacity: 1;
+  color: lawngreen;
+  font-size: auto; }
+
+.img-full {
+  height: 100%;
+  width: auto; }

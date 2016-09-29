@@ -5,42 +5,60 @@ function getMusic(){
 }
 
 
-
 function drawSongs(songList){
-  var template =[]
+  var template = ''
   var songElem = document.getElementById('song-list')
+  var songCount = document.getElementById('track-count')
+  var songId = songList.length
   for (var i = 0; i < songList.length; i++) {
-    var song = songList[i]  
-    var title = song.title
-    var artist = song.artist
-    var price = song.price
-    var album = song.collection
-    template += `<li> Title: ${title}  Artist: ${artist} Album: ${album}  Price: ${price}</li>`  
+    var song = songList[i]   
+template +=
+  `<div class = 'col-xs-12 col-md-6'>
+  <div class= 'song'>
+  <div class = 'picName-container'>
+     <div class = 'img-container pic-container'>
+       <img class='img-rounded' src= "${song.albumArt}" alt="" />
+     </div>
+    <div class = 'img-container title-container'>
+       <h3> ${song.title}</h3>
+    </div>
+    </div>
+    <div class = 'player-container'>
+    <audio id='${songId}' preload='none'>
+    <source src ='${song.preview}' type='audio/aac'>
+    </audio>
+    </div>
+    <div class ='extra-container'>
+        <h4>By ${song.artist} || ${song.collection} || ${song.price}  </h4>
+        <i class= "fa fa-play-circle fa-2x" aria-hidden="true" onmouseover= 'document.getElementById("${songId}").load(); document.getElementById("${songId}").play()' onmouseout= 'document.getElementById("${songId}").pause();'></i>
+        </div>
+     </div>
+     </div>
+     </div>
+`
+songId--
   }    
     songElem.innerHTML = template
-  console.log(songList);
+    songCount.innerHTML = `Tracks Showing: ${songList.length}`
 }
 
 
+// var autoPlay = document.getElementById("previewPlay");
+// asss.onmouseover=function(){
+// previewPlay.play();
+// return false;
+// };
 
-    // var songElem = document.getElementById('comics')
-//     for (var i = 0; i < arr.length; i++) {
-//       var comic =arr[i]
-//       var title = comic.title
-//       template +=`<div id="comics">
-//   <div class = 'comic'>
-//     <div class = 'img-container'>
-//       <img src= "${comic.url}" alt="" />
-//     </div>
-//     <div class = 'text-container'>
-//       <h1>${comic.title}</h1>
-//       <h2>${comic.date}</h2>
-//       <a href= ${comic.link} target="_Blank">Buy NOW !!</a>
-//     </div>
-//   </div>
-// </div>`
-//     }
-//       comicElem.innerHTML = template
-//   }
-  
-// toScreen(comics)
+
+// audio.play();
+// });
+
+// var autoPlay = document.createAttribute('autoplay') 
+
+
+// var autoPlay = document.getElementsByTagName("audio");
+// $("nav a").mouseenter(function() {
+//   autoPlay.play();
+// });
+
+// audio.autoPlay
