@@ -4,6 +4,7 @@ function getMusic(){
   itunes.getMusicByArtist(artist).then(drawSongs);
 }
 
+var songSearchList =[]
 
 function drawSongs(songList){
   var template = ''
@@ -30,7 +31,11 @@ template +=
     </div>
     <div class ='extra-container'>
         <h4>By ${song.artist} || ${song.collection} || ${song.price}  </h4>
+        <div class = 'button-container'>
+        
+        <button class= 'addTrack faButton' type='button' id=${song.trackId} name='addTrack'><i class= "addTrack fa fa-plus-circle fa-2x"></i></button>
         <i class= "fa fa-play-circle fa-2x" aria-hidden="true" onmouseover= 'document.getElementById("${songId}").load(); document.getElementById("${songId}").play()' onmouseout= 'document.getElementById("${songId}").pause();'></i>
+        </div>
         </div>
      </div>
      </div>
@@ -40,6 +45,8 @@ songId--
   }    
     songElem.innerHTML = template
     songCount.innerHTML = `Tracks Showing: ${songList.length}`
+   songSearchList = songList
 }
 
-  
+
+
