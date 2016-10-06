@@ -3,31 +3,40 @@
     <title>MyTunes</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
     <link rel ='stylesheet' href='bundle.css'/>
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-    <script src='itunes-service.js'></script>
-    <script src='app.js'></script>
     <script src="https://use.fontawesome.com/c17ddedbe8.js"></script>
   </head>
   <body>
       <div class="container container-responsive">
           <div class='jumbotron jumbo'>
               <h1> WELCOME <i class= 'fa fa-play-circle' aria-hidden="true"></i> </h1>
-              <h3> find your music... Just type and play</h3>
+              <h3> To find your music... Just type and play</h3>
       <form class="form-inline">
         <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
         <div class="form-group">
           <input type="text" onkeyup="getMusic()" class="form-control" id="artist" placeholder="Artist Name"/>
-          <!--<button type="button" class="btn btn-primary" id="get-music-button" onclick="getMusic()">Get Music</button>-->
+        
         </div>
       </form>
-      <h4 id ='track-count'></h4>
+      <h4 id ='track-count'>Tracks Showing: 0</h4>
+      <div class= 'button-row'>
+      <button class = 'showMySongs faHead' type='button' id='showMySongs'><i class="fa fa-exchange fa-2x" aria-hidden="true"></i> Switch to MyList </button>
+      <button class = 'clearMyList faHead' type='button' id='clearMyList'><i class='fa fa-bomb fa-2x'></i>Clear PlayList</button>
       </div>
-      <div class = 'row'>
-          <!--<div class = 'col-xs-6 col-md-3'>-->
+      </div>
+      <div class = 'container container-responsive searchSongs'>
+      <div class = 'row' id='song-list'>
+          
        <ul id = "song-list">
        </ul>
       <!--</div>-->
        </div>
        </div>
+         </div>
+       </div>
+       <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src='itunes-service.js'></script>
+    <script src='app.js'></script>
+    <script src = 'my-tunes-service.js'></script>
+    <script src ='my-tunes-controller.js'></script>
   </body>
 </html>
