@@ -154,11 +154,18 @@ h3 {
   text-shadow: 2px 2px 8px black;
   border-color: transparent;
   border-image: none;
-  border-style: none; }
+  border-style: none;
+  box-shadow: none; }
 
 .faHead:active {
   background: orangered;
-  color: orangered; }
+  color: orangered;
+  outline: none;
+  box-shadow: none; }
 
 .faHead:hover {
   color: orangered; }
+
+button.faHead:focus {
+  outline: none;
+  box-shadow: none; }

@@ -179,12 +179,19 @@ animation-fill-mode: forwards;
     border-color: rgba(00, 00, 00, 0);
     border-image:none;
     border-style: none;
+    box-shadow: none;
 }
 .faHead:active{
       background:orangered;
       color:orangered;
+      outline:none;
+      box-shadow:none;
 }
 .faHead:hover{
     color:orangered;
+}
+button.faHead:focus{
+    outline:none;
+    box-shadow: none;
 }
 

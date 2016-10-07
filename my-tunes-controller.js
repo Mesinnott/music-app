@@ -32,7 +32,10 @@ template +=
         <div class = 'button-container'>
         <button class='moveUp faButton' type='button' id='${song.trackId}'><i class= 'moveUp fa fa-hand-o-up fa-2x'></i></button>
         
-        <i class= "fa fa-play-circle fa-2x" aria-hidden="true" onmouseover= 'document.getElementById("${songId}").load(); document.getElementById("${songId}").play()' onmouseout= 'document.getElementById("${songId}").pause();'></i>
+        
+        
+         <button class="playSong"><i class= "fa fa-play-circle fa-2x" aria-hidden="true"></i></button>
+        
         <button class='moveDown faButton' type='button' id='${song.trackId}' name='moveDown'><i class= 'moveDown fa fa-hand-o-down fa-2x'></i></button>
         <button class='button btn-danger delete faButton' type='button' id='${song.trackId}'><i class='delete fa fa-trash-o fa-2x'></i></button>
         </div>
@@ -41,9 +44,12 @@ template +=
      </div>
      </div>
 `
+//         <i class= "fa fa-play-circle fa-2x" aria-hidden="true" onmouseover= 'document.getElementById("${songId}").load(); document.getElementById("${songId}").play()' onmouseout= 'document.getElementById("${songId}").pause();'></i>
+// onmouseover= 'document.getElementById("${songId}").load(); document.getElementById("${songId}").play()' onmouseout= 'document.getElementById("${songId}").pause();'></i>
+//  onmouseover= 'document.getElementById("${songId}").load(); document.getElementById("${songId}").play()' onmouseout= 'document.getElementById("${songId}").pause();'></i>
 songId--
   }    
-    songElem.innerHTML = '<h1 class=title> MY PLAY LIST </h1>'+ template
+    songElem.innerHTML = '<h1 class=title> MYLIST </h1>'+ template
     songCount.innerHTML = `Tracks Showing: ${songList.length}`
 }
 
@@ -64,10 +70,11 @@ songId--
         
     })
 
-
+var x
     $('#showMySongs').on('click', function(){
 
         var tempList = myTunes.getTracks()
+        x = tempList
         console.log(tempList)
         drawMySongs(tempList)
     })
@@ -91,6 +98,27 @@ songId--
         drawMySongs(tempList)
     })
 
+    $('#song-list').on('mouseenter', 'button.playSong', function(event){
+        var songNow
+        // for(var i=0; i<songList.length; i++){
+        //     if(this.id == songList[i].trackId){
+        //         songNow = songList[i]
+        //     }
+        // }
+        myTunes.playSong(x[0])
+    })
+
+    $('#playEntireList').on('click', function(){
+        debugger
+
+        myTunes.playEntireList(3)
+    })
+
+    $('#stopPlay').on('click', function(){
+        debugger
+        myTunes.stopPlaying()
+    })
+   
 
 }
 
