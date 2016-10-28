@@ -14,6 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/Mesinnott/music-app.git"
   },
+  "keywords":[],
   "author": "Michael Sinnott <mesinnott@gmail.com>",
   "license": "ISC",
   "bugs": {

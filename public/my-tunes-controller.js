@@ -115,6 +115,10 @@ var x
         myTunes.stopPlaying()
     })
    
+   $('#loadPlaylists').on('click', function(){
+       debugger
+       
+   })
 
 }
 

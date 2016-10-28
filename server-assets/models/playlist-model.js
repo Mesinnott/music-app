@@ -1,6 +1,6 @@
-let dataAdapter = require('.data-adapter'),
+let dataAdapter = require('./data-adapter'),
     uuid=dataAdapter.uuid,
-    schemator = dataAdapter.schemator,
+    // schemator = dataAdapter.schemator,
     DS=dataAdapter.DS,
     formatQuery = dataAdapter.formatQuery;
 
@@ -11,26 +11,20 @@ let Playlist = DS.defineResource({
     filepath: __dirname + '/..data/playlists.db',
 })
 
-schemator.defineSchema('Playlist', {
-    id:{
-        type: 'string',
-        nullable: false
-    },
-        name:{
-            type:'string',
-            nullable: false
-        },
-})
 
 
-function create(name, song, cb) {
-    let playlist = {id: uuid.v4(), name:name };
-    let error = schemator.validateSync('Playlist', playlist)
-    if(error){
-        error.stack = true
-        return cb(error);
-    }
-    Playlist.create(playlist).then(cb).catch(cb)
+function create(playlist, cb) {
+    let playlistObj = {
+        id: uuid.v4(), 
+        name:playlist.name, 
+        songs:playlist.songs, 
+        downVotes:0, 
+        upVotes:0}
+    // if(err){
+    //     error.stack = true
+    //     return cb(err);
+    // }
+    Playlist.create(playlistObj).then(cb).catch(cb)
 }
 
 function getAll(query, cb){
@@ -40,8 +34,38 @@ function getAll(query, cb){
 function getById(id, query, cb){
     Playlist.find(id, formatQuery(query)).then(cb).catch(cb)
 }
+
+function updatePlaylist(id, input, cb){
+    Playlist.find(id).then(function(playlist){
+        if(input.name){
+        playlist.name=input.name || {}
+        };
+        if(input.vote && input.vote=="down"){
+            if(playlist.downVotes){
+            playlist.downVotes++
+            }else{playlist.downVotes =1}
+            
+        };
+        if (input.vote && input.vote == "up"){
+            if(playlist.upVotes){
+            playlist.upVotes++
+            }else{playlist.upVotes =1}
+        };
+        if(input.songs){
+            playlist.songs=input.songs || {}
+        };
+
+        Playlist.update(playlist.id, playlist).then(function(){
+            DS.update('playlist', playlist.id, playlist)
+        .then(cb)
+        .catch(cb)
+    }).catch(cb)
+    }).catch(cb)
+}
+
 module.exports={
     create,
     getAll,
+    updatePlaylist,
     getById
 }
