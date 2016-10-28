@@ -1,46 +1,57 @@
 <html>
-  <head>
-    <title>MyTunes</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-    <link rel ='stylesheet' href='bundle.css'/>
-    <script src="https://use.fontawesome.com/c17ddedbe8.js"></script>
-  </head>
-  <body>
-    <audio src="" id="currently-playing"></audio>
-      <div class="container container-responsive">
-          <div class='jumbotron jumbo'>
-              <h1> WELCOME <i class= 'fa fa-play-circle' aria-hidden="true"></i> </h1>
-              <h3> To find your music... Just type and play</h3>
-      <form class="form-inline">
-        <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
-        <div class="form-group">
-          <input type="text" onkeyup="getMusic()" class="form-control" id="artist" placeholder="Artist Name"/>
-        
-        </div>
-      </form>
-      <h4 id ='track-count'>Tracks Showing: 0</h4>
-      <div class= 'button-row'>
-      <button class = 'showMySongs faHead' type='button' id='showMySongs'><i class="fa fa-exchange fa-2x" aria-hidden="true"></i> Switch to MyList </button>
-      <button class = 'btn btn-primary playEntireList' type='button' id='playEntireList'>Play entire List</button>
-      <!--<button class = 'btn btn-primary' type = 'button' id ='resumePlay'>Resume</button>-->
-      <button class = 'stopPlay btn btn-danger' type= 'button' id='stopPlay'>Stop playing</button>
-      <button class = 'clearMyList faHead' type='button' id='clearMyList'><i class='fa fa-bomb fa-2x'></i>Clear MyList</button>
-      </div>
-      </div>
-      <div class = 'container container-responsive searchSongs'>
-      <div class = 'row' id='song-list'>
-          
-       <ul id = "song-list">
-       </ul>
-      <!--</div>-->
-       </div>
-       </div>
-         </div>
-       </div>
-       <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-    <script src='itunes-service.js'></script>
-    <script src='app.js'></script>
-    <script src = 'my-tunes-service.js'></script>
-    <script src ='my-tunes-controller.js'></script>
-  </body>
+
+<head>
+	<title>MyTunes</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<link rel='stylesheet' href='bundle.css' />
+	<script src="https://use.fontawesome.com/c17ddedbe8.js"></script>
+</head>
+
+<body>
+	<audio src="" id="currently-playing"></audio>
+	<div class="container container-responsive">
+		<div class='jumbotron jumbo'>
+			<h1> WELCOME <i class='fa fa-play-circle' aria-hidden="true"></i> </h1>
+			<h3> To find your music... Just type and play</h3>
+			<form class="form-inline">
+				<!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
+				<div class="form-group">
+					<input type="text" onkeyup="getMusic()" class="form-control" id="artist" placeholder="Artist Name" />
+
+				</div>
+			</form>
+			<h4 id='track-count'>Tracks Showing: 0</h4>
+			<div class='button-row'>
+				<button class='showMySongs faHead' type='button' id='showMySongs'><i class="fa fa-exchange fa-2x" aria-hidden="true"></i> Switch to MyList </button>
+				<button class='btn btn-primary playEntireList' type='button' id='playEntireList'>Play entire List</button>
+				<!--<button class = 'btn btn-primary' type = 'button' id ='resumePlay'>Resume</button>-->
+				<button class='stopPlay btn btn-danger' type='button' id='stopPlay'>Stop playing</button>
+				<button class='clearMyList faHead' type='button' id='clearMyList'><i class='fa fa-bomb fa-2x'></i>Clear MyList</button>
+			</div>
+		</div>
+		<div class='container container-responsive searchSongs'>
+			<div class='row' id='song-list'>
+
+				<ul id="song-list">
+				</ul>
+				<!--</div>-->
+			</div>
+		</div>
+	</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+	<script src='itunes-service.js'></script>
+	<script src='app.js'></script>
+	<script src='my-tunes-service.js'></script>
+	<script src='my-tunes-controller.js'></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+  var socket = io();
+
+  socket.on('update', function(msg){
+    console.log('Update: ', msg)
+  })
+</script>
+</body>
+
 </html>
