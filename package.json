@@ -1,0 +1,23 @@
+{
+  "name": "music-app",
+  "version": "1.0.0",
+  "description": "a super awesome fun time music player",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mesinnott/music-app.git"
+  },
+  "author": "Michael Sinnott <mesinnott@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mesinnott/music-app/issues"
+  },
+  "homepage": "https://github.com/Mesinnott/music-app#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}
