@@ -6,6 +6,10 @@
   "scripts": {
     "start": "node index.js"
   },
+  "engines": {
+    "node": "6.3.1",
+    "npm":"3.9.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mesinnott/music-app.git"
@@ -18,18 +22,12 @@
   "homepage": "https://github.com/Mesinnott/music-app#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "cors": "^2.8.1",
+    "cors": "^2.7.1",
     "express": "^4.14.0",
-    "express-cors": "0.0.3",
-    "firebase": "^3.5.2",
+    "firebase": "^2.4.2",
     "js-data": "^2.9.0",
     "js-data-firebase": "^2.1.1",
-    "js-data-schema": "^1.2.5",
-    "js-data-sql": "^0.11.17",
-    "knex": "^0.12.6",
     "node-uuid": "^1.4.7",
-    "pg": "^6.1.0",
-    "socket.io": "^1.5.1",
-    "uuid": "^2.0.3"
+    "socket.io": "^1.5.1"
   }
 }

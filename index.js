@@ -3,7 +3,9 @@ let express= require('express'),
     cors = require('cors'),
     routes=require('./server-assets/routes/index')
     handlers = require('./utils/handlers'),
-    serve= express(),
+    server= express(),
+    http = require('http').Server(server),
+  io = require('socket.io')(http),
     port = process.env.PORT || 3001;
 
 
