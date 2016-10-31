@@ -2,6 +2,7 @@
 function AppController(){
 
     var myTunes= new MyTunes()
+    var url= "window.location.origin/"
 
 
     function drawMySongs(songList){
@@ -115,10 +116,23 @@ var x
         myTunes.stopPlaying()
     })
    
-   $('#loadPlaylists').on('click', function(){
-       debugger
-       
+   $('#allPlaylists').on('click', function(){
+              debugger
+              var template = ''
+              $.get('/api/playlists',function(response){
+                  for(i=0; i<response.length; i++){
+                      var list= response[i]
+                      template+=
+                      `<div class='col-xs-12 col-md-6'>
+                      <h3>${list.name}</h3>
+                      </div>`
+                  }
+                  document.getElementById('song-list').innerHTML='<h1> Lists </h1>' + template
+              })
    })
+   
+
+
 
 }
 
